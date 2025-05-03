@@ -1,0 +1,95 @@
+import { faker } from "@faker-js/faker";
+import { UseableModule } from "./types";
+
+const internetUseables: UseableModule = {
+  userName: {
+    action: () => faker.internet.userName(),
+    group: "Internet",
+    explanation: "Returns a username",
+    usage: "userName()",
+    example: faker.internet.userName(),
+    type: String,
+  },
+  password: {
+    action: () => faker.internet.password(),
+    group: "Internet",
+    explanation: "Returns a password",
+    usage: "password()",
+    example: faker.internet.password(),
+    type: String,
+  },
+  url: {
+    action: () => faker.internet.url(),
+    group: "Internet",
+    explanation: "Returns an URL",
+    usage: "url()",
+    example: faker.internet.url(),
+    type: String,
+  },
+  ipv4: {
+    action: () => faker.internet.ip(),
+    group: "Internet",
+    explanation: "Returns an IPv4",
+    usage: "ipv4()",
+    example: faker.internet.ipv4(),
+    type: String,
+  },
+  ipv6: {
+    action: () => faker.internet.ipv6(),
+    group: "Internet",
+    explanation: "Returns an IPv6",
+    usage: "ipv6()",
+    example: faker.internet.ipv6(),
+    type: String,
+  },
+  httpMethod: {
+    action: () => faker.internet.httpMethod(),
+    group: "Internet",
+    explanation: "Returns an HTTP method",
+    usage: "httpMethod()",
+    example: faker.internet.httpMethod(),
+    type: String,
+  },
+  httpStatusCode: {
+    action: () => faker.internet.httpStatusCode().toString(),
+    group: "Internet",
+    explanation: "Returns an HTTP status code",
+    usage: "httpStatusCode()",
+    example: faker.internet.httpStatusCode().toString(),
+    type: Number,
+  },
+  port: {
+    action: () => faker.internet.port().toString(),
+    group: "Internet",
+    explanation: "Returns a port",
+    usage: "port()",
+    example: faker.internet.port().toString(),
+    type: Number,
+  },
+  protocol: {
+    action: () => faker.internet.protocol(),
+    group: "Internet",
+    explanation: "Returns a protocol",
+    usage: "protocol()",
+    example: faker.internet.protocol(),
+    type: String,
+  },
+  userAgent: {
+    action: () => faker.internet.userAgent(),
+    group: "Internet",
+    explanation: "Returns a userAgent",
+    usage: "userAgent()",
+    example: faker.internet.userAgent(),
+    type: String,
+  },
+  emoji: {
+    action: () => faker.internet.emoji(),
+    group: "Internet",
+    explanation: "Returns an emoji",
+    usage: "emoji()",
+    example: faker.internet.emoji(),
+    type: String,
+  },
+};
+
+export default internetUseables;

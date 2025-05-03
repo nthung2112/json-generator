@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Layout and Theme */
+@layer base {
+  html,
+  body {
+    @apply w-screen h-screen overflow-hidden grid;
+    grid: 1fr / 1fr;
+  }
+
+  body {
+    @apply font-sans text-base text-white bg-background m-0;
+  }
+
+  #root {
+    @apply h-screen;
+  }
+}
+
+/* Global App Layout */
+@layer components {
+  .app {
+    @apply grid h-full;
+    grid-template: auto 1fr / 1fr;
+  }
+
+  .main-content {
+    @apply h-full;
+  }
+}
+
+/* Custom Scrollbar - Shared Styles */
+@layer utilities {
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-[6px] h-[6px];
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-white/40 rounded-full hover:bg-white/60;
+  }
+}
+
+/* Splitpanes Styles */
+.splitpanes.default-theme {
+  .splitpanes__pane {
+    @apply bg-pane-bg;
+  }
+
+  .splitpanes__splitter {
+    @apply bg-background box-border relative flex-shrink-0 z-[1];
+
+    &:before {
+      content: "";
+      @apply absolute top-1/2 left-1/2 bg-splitter transition-colors duration-300;
+    }
+
+    &:hover:before {
+      @apply bg-splitter-hover;
+    }
+
+    &:first-child {
+      @apply cursor-auto;
+    }
+  }
+
+  &.splitpanes--vertical,
+  .splitpanes--vertical > .splitpanes__splitter {
+    @apply w-[7px] border-l-0 -ml-[1px];
+
+    &:before {
+      @apply w-[2px] h-[30px] -ml-[1px];
+      transform: translateY(-50%);
+    }
+  }
+
+  &.splitpanes--horizontal,
+  .splitpanes--horizontal > .splitpanes__splitter {
+    @apply h-[7px] border-t-0 -mt-[1px];
+
+    &:before {
+      @apply w-[30px] h-[2px] -mt-[1px];
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* React Resizable Panels */
+[data-panel] {
+  @apply h-full w-full overflow-auto bg-preview-bg custom-scrollbar;
+}
+
+[data-panel-group] {
+  @apply h-full w-full;
+}
+
+[data-panel-resize-handle] {
+  @apply w-[2px] bg-resize-handle transition-colors duration-200 hover:bg-primary;
+}
+
+/* App Region Controls */
+@layer utilities {
+  .app-region-drag {
+    -webkit-app-region: drag;
+    app-region: drag;
+  }
+
+  .app-region-no-drag {
+    -webkit-app-region: no-drag;
+    app-region: no-drag;
+  }
+}
+
+/* Ace Editor Styles */
+.ace_editor {
+  @apply font-mono text-sm leading-normal;
+}
+
+.ace_gutter {
+  @apply bg-[#1e2126] text-white/40;
+}
+
+.ace_print-margin {
+  @apply hidden;
+}
+
+.ace_scrollbar {
+  @apply custom-scrollbar;
+}
