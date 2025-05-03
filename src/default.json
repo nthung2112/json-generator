@@ -1,0 +1,10 @@
+[
+  "loop(3,5)",
+  {
+    "id": "{uuid()}",
+    "username": "{userName()}",
+    "avatar": "{avatar()}",
+    "pronouns": "{enum(she/her, she/they, he/him, he/they, they/them)}",
+    "bio": "{bio()}"
+  }
+]

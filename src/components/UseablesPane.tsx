@@ -2,7 +2,7 @@ import { FC, useEffect, useState, useCallback } from "react";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 import { useablesMap } from "../useables";
 import UseableDetail from "./UseableDetail";
-import { UseableInfo, GroupedUseables } from "../types/types";
+import { UseableInfo, GroupedUseables } from "../types";
 
 const UseablesPane: FC = () => {
   const [useableInfo, setUseableInfo] = useState<UseableInfo | null>(null);

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { UseableInfo } from "../types/types";
+import { UseableInfo } from "../types";
 
 interface UseableDetailProps {
   useableInfo: UseableInfo;
